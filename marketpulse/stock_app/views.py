@@ -13,12 +13,9 @@ def stock_details(request):
     cached_stock = StockCache.objects.filter(company=company, duration=years).first()
     if cached_stock:
         data = cached_stock.result
-        print("cached data...")
-        print(data)
     else:
         json_data=fetch_stock_data(company,years)
         data=stock_data_computation(json_data)
-        print(data)
         StockCache.objects.create(company=company,duration=years,result=data)
         
     months = {
