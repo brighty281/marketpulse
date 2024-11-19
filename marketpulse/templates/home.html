@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>MarketPulse</title>
+        <!-- Bootstrap CSS -->
+        <link
+            href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+            rel="stylesheet"
+        />
+    </head>
+    <body class="bg-light">
+        <div class="container mt-5">
+            <div class="row justify-content-center">
+                <div class="col-md-6">
+                    <div class="card shadow">
+                        <div class="card-header bg-primary text-white text-center">
+                            <h3>Welcome to MarketPulse</h3>
+                        </div>
+                        <div class="card-body">
+                            <form action="http://127.0.0.1:8000/stock_plot" method="get">
+                                <!-- Dropdown for number of years -->
+                                <div class="mb-3">
+                                    <label for="years" class="form-label">
+                                        Select number of years:
+                                    </label>
+                                    <select id="years" name="years" class="form-select">
+                                        <option value="1">1</option>
+                                        <option value="2">2</option>
+                                        <option value="3">3</option>
+                                        <option value="4">4</option>
+                                        <option value="5">5</option>
+                                    </select>
+                                </div>
+
+                                <!-- Dropdown for company name -->
+                                <div class="mb-3">
+                                    <label for="company" class="form-label">
+                                        Select company:
+                                    </label>
+                                    <select id="company" name="company" class="form-select">
+                                        <option value="apple">Apple</option>
+                                    </select>
+                                </div>
+
+                                <!-- Submit button -->
+                                <div class="text-center">
+                                    <button type="submit" class="btn btn-primary">
+                                        Submit
+                                    </button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Bootstrap JS and dependencies -->
+        <script
+            src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
+        ></script>
+    </body>
+</html>
