@@ -8,7 +8,7 @@ from django.conf import settings
 
 # Create your views here.
 def sample_view(request):
-    return render(request,'home.html')
+    return render(request,'home.html',{'base_url':settings.BASE_URL})
 
 def stock_details(request):
     company=request.GET.get('company')
@@ -30,5 +30,5 @@ def stock_details(request):
         {'month': months[i], 'count': data.get(f'{i}.0', 0)}
         for i in range(1, 13)
     ]
-    return render(request,'stock_plot.html',{'table_data': table_data},{'base_url':settings.BASE_URL})
+    return render(request,'stock_plot.html',{'table_data': table_data})
 
